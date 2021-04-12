@@ -1,0 +1,516 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Poppins:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/*============= GENERAL CSS ===========*/
+*{
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+
+
+}
+a{
+    text-decoration: none ;
+}
+ul{
+    list-style: none;
+}
+
+:root{
+    --main-font : 'Oxygen' ;
+    --secondary-font : "Poppins" ;
+    --third-font : "Roboto" ;
+    
+
+    /* colors*/
+    --light-color : rgb(255,255,255,0.8) ; 
+    --yellowish-color:rgb(255, 239, 210,0.8) ;
+    --primary-color :#251a06 ;
+    --secondary-color: #0FB3C6;
+    --dark-color: black; 
+
+}
+@font-face{ 
+    font-family:"Fontin" ;
+    src: url('./Fontin\ Sans\ Regular.otf');
+}
+
+/*========== NAVBAR ==============*/
+body{
+    height: 100vh ;  
+    width: 100vw;
+    overflow-x: hidden;
+}
+header{
+   
+    height: 6rem ;
+    width: 100vw;
+    display: flex ; 
+    padding: 1rem 6rem;
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.hamburger-wrapper{
+    display: none;
+}
+.hamburger{
+    position: fixed;
+    z-index: 100;
+    top:1rem;
+    left: 1rem;;
+    width: 3rem;
+    height:1.8rem ;
+    display: flex ;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+    cursor: pointer;
+    transition : all 0.5s ease;
+}
+.hamburger .line1{
+    height:0.3rem ;
+    width:2.5rem ;
+    background-color:var(--yellowish-color);
+    border-radius:5px;
+    
+}
+.hamburger .line2{
+    height:0.3rem ;
+    width:2.5rem ;
+    background-color:var(--yellowish-color);
+    border-radius:5px;
+    transition : all 0.5s ease;
+}
+.hamburger .line3{
+    height:0.3rem ;
+    width:2.5rem ;
+    background-color:var(--yellowish-color);
+    border-radius:5px;
+    transition : all 0.5s ease;
+}
+.hamburger.active {
+    justify-content:center ;
+    top:1.5rem;
+}
+.hamburger.active .line1{
+    display:none;
+}
+.hamburger.active .line2{
+    transform: rotate(-45deg);
+    background-color: black;
+}
+.hamburger.active .line3{
+    margin-top:-0.3rem ;
+    transform: rotate(45deg);
+    background-color: black;
+}
+
+.mobile-nav{
+    position: absolute;
+    height:100vh ;
+    width: 100vw;
+    background-color: white;
+    top: 0;
+    left: 0 ; 
+    padding: 70px 30px;
+    display: flex; 
+    align-items: center;
+    justify-content:center;
+    flex-direction:column ;
+    transform: translateX(-100%);
+    transition : transform 0.5s ease; 
+}
+.mobile-nav.active{
+    transform: translateX(0);
+}
+.mobile-nav .nav__menu{
+     display: flex ; 
+     flex-direction : column; 
+     justify-content:space-evenly;
+     height: 70%;
+    
+}
+.mobile-nav h3{
+    font-size:2.7rem;
+    margin-bottom: 1rem;
+}
+.mobile-nav .nav__menu--item a{
+    color:var(--dark-color) ;
+    font-size: 1.6rem ;
+   
+}
+.mobile-nav .nav__menu--item a:hover{
+    text-decoration: underline;
+}
+
+.logo img{
+    width: 6rem ;
+    padding-top: 3rem;
+    transition: all 0.5s ease;
+}
+.desktop-nav{
+    width: 40%;
+    display:flex ;
+}
+
+.nav__menu{
+    display: flex ;
+    justify-content: space-between;
+    width: 60%;
+    align-items: center;
+    
+}
+.icons{
+    margin-top: 0.5rem;
+    display: flex ;
+    justify-content: space-between;
+    width: 40%;
+    align-items: center;
+    margin-left: 2rem;
+    
+}
+.nav__menu--item a{
+    color:var(--light-color);
+    font-family: var(--main-font);
+    font-size: .8rem;
+    letter-spacing: 0.7px ;
+    cursor:pointer
+}
+.nav__menu--item button{
+    display: flex ;
+    border: none;
+    margin-bottom: 1.3rem;
+    background: var(--primary-color) ;
+    cursor: pointer;
+}
+.nav__menu--item img{
+   background: var(--primary-color) ;
+   width : 1.6rem ;
+   height: 1.6rem ;
+ 
+}
+
+.cart img{
+    width : 2rem ;
+    height: 2rem ;
+
+}
+.cart span{
+   
+    width: 1.5rem ;
+    height: 1.5rem ;
+    border-radius: 50%; 
+    background-color: var(--yellowish-color) ;
+    color:var(--primary-color);
+    margin-left: .5rem ;
+    margin-top: 0.3rem;
+    text-align: center;
+    line-height: 25px;
+
+}
+
+#main{
+    width: 100% ;
+    height: 100vh;
+    padding-top: 6rem;
+    background-image: url('../images/main.jpg');
+    background-repeat: no-repeat;
+    background-position:center ;
+    background-size: cover;
+
+}
+
+.hero-card{
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.7);
+}
+.hero-card .content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex; 
+    flex-direction:column ; 
+    justify-content: center; 
+    align-items: center;
+}
+.hero-card .content h1{
+    font-family: "Fontin";
+    font-weight:700; 
+    color: rgba(0,0,0,0.65);
+    font-size:1.5rem;
+}
+.hero-card .content p{
+    margin: 1rem 0 1.5rem 0;
+   font-family: var(--main-font);
+   color: rgb(68,68,68);
+   font-size: 1.1rem;
+   font-weight: 500;
+}
+.hero-card .content button{
+    width: 10rem;
+    padding: 1rem 0;
+    background-color: var(--secondary-color);
+    border: none;
+    font-family: "Fontin";
+    letter-spacing:1.8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.4s ease ;
+ 
+}
+.hero-card .content button:hover{
+    background-color: black ;
+    
+}
+
+/*================ MISSION SECTION ====================*/
+
+#mission{
+   height: 50vh;
+   min-height:fit-content;
+   width: 100%;
+   background:  var(--secondary-color);
+   color: white;
+   display: flex ;
+   align-items: center;
+   justify-content:center;
+   text-align: center;
+   
+}
+#mission p {
+    width: 60%;
+    line-height: 1.6;
+    letter-spacing:0.8px; 
+    word-spacing: 1.5px;
+    font-family: var(--main-font);
+    font-size: .95rem;
+    text-justify: justify;
+}
+
+/*==================EXPLORE SECTION ===================*/
+
+#explore{
+    width: 100%;
+    height: 110vh;
+    display: grid ; 
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 50vw 50vw;
+}
+.left-section , .right-section .top{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  
+} 
+.left-section{
+    grid-column: 1/2;
+    grid-row:1/3 ;
+}
+.explore--img{
+    height: 100%;
+    width: 100%;
+    background: url('../images/farms.jpg');
+    background-position: center;
+    background-size: cover;
+    transition: transform 6s ease,filter 0.3s ease  ;
+  
+}
+
+.explore--btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 15rem;
+    background: transparent ;
+    backdrop-filter: brightness(0.8);
+    padding: 1.2rem 0;
+    border: 1px solid var(--secondary-color);
+    color: white;
+    font-family: "Fontin";
+    font-size: 0.68rem;
+    letter-spacing:1.7px;
+    word-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .3s ease-in;
+}
+.explore--btn:hover{
+    background: var(--dark-color); 
+    border-color: var(--dark-color); 
+}
+.right-section .top{
+    grid-column: 2/3; 
+    grid-row:1/2 ;
+}
+.right-section .top .explore--img{
+    background: url('../images/beans.jpg');
+}
+
+.left-section:hover .explore--img, .right-section .top:hover .explore--img{
+   transform: scale(1.2);
+   filter: brightness(0.6);
+}
+.right-section .bottom{
+    grid-column: 2/3;
+    grid-row : 2/3;
+    width: 100%;
+    height:100%  ;
+    padding: 100px;
+    background: var(--secondary-color) ;
+    text-align: center;
+    display: flex; 
+    flex-direction : column ; 
+    align-items: center ; 
+    justify-content: center; 
+    
+}
+.right-section .bottom h3{
+    font-family: "Fontin";
+    font-size:.9rem ; 
+    letter-spacing:2.2px ; 
+    word-spacing: 3.2px;
+    margin-bottom : 1rem ;
+}
+.right-section .bottom p{
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing:0.7px;
+}
+.right-section .bottom form{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.right-section .bottom input{
+   width :24rem;
+   height : 2.6rem ;
+   border:none;
+   outline: none;
+   padding: .7rem;
+   background-color: #149dad;
+   color: white;
+   font-size: .9rem;
+   margin-right: 1rem;
+   max-width:95%;
+   
+}
+.right-section .bottom input::placeholder{
+    color: rgb(255,255,255,0.3);
+    font-weight: 200;
+    
+}
+.right-section .bottom form div{
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+}
+.right-section .bottom .dot{
+    font-size: 0.8rem;
+    color:rgb(255,255,255,.5);
+    margin: 0.8rem;
+}
+.right-section .bottom div p{
+    color:rgb(255,255,255,.5);
+    font-size: 1rem;
+}
+.right-section .bottom button{
+    width: 2.4rem;
+    height: 2.5rem;
+    border: 1px solid white;
+    background: transparent ;
+    cursor: pointer;
+}
+.right-section .bottom button img {
+    width: 1.5rem;
+}
+
+
+
+@media screen and (max-width:800px){
+    body{
+        width: 100%;
+    }
+    header{
+        padding: 10px;
+        height: 4rem;
+        z-index: 100;
+    }
+    .desktop-nav .nav__menu{
+        display:none;
+    }
+    .hamburger-wrapper{
+        display:block ;
+        width: 40% ;
+         
+    }
+    .logo{
+        width:30% ;
+        display:flex ;
+        justify-content:center;
+        position: absolute;
+        left: 50%;
+        transform:translateX(-50%);
+        height: 4rem;
+    }
+    .logo img{
+      position: absolute;
+      height:110%;
+      top: .5rem;
+      padding:0;
+
+      
+    }
+    .desktop-nav{
+        width: 30%;
+    }
+    .desktop-nav .icons{
+        width: 100%;
+        justify-content:space-between;
+        margin:1rem 0 0 0 ;
+        
+    }
+    .cart img{
+        display:none;
+    }
+    .cart span{
+        margin-left:0;
+    }
+    .hero-card{
+        top:50%;
+        left:50%;
+        transform :translate(-50%,-50%) ;
+    }
+    #explore{
+        grid-template-columns: 100vw;
+        grid-template-rows: 50vh 50vh 50vh;
+        
+    }
+    #explore .left-section{
+        grid-row: 1/2;
+    }
+}
+@media screen and (max-height:700px){
+    #mission {
+        height:80vh;
+    }
+    #explore .right-section .bottom{
+        padding: 30px;
+        height: 70vh;
+    }
+}
+
