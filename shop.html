@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coffee Shop</title>
+    <meta name="description" content="E-commerce website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <header class="shop">
+        <div class="hamburger-wrapper">
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <nav class="mobile-nav" aria-label="aside mobile nav">
+
+            <h3>Explore</h3>
+            <ul class="nav__menu">
+                <li class="nav__menu--item"><a href="">SHOP</a></li>
+                <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a href="">LEARN</a></li>
+                <li class="nav__menu--item"><a href="">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo-light.svg" alt="logo">
+        </a>
+
+        <nav class="desktop-nav" aria-label="desktop nav">
+            <ul class="nav__menu">
+                <li class="nav__menu--item"><a href="shop.html">SHOP</a></li>
+                <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a href="">LEARN</a></li>
+                <li class="nav__menu--item"><a href="">ABOUT US</a></li>
+
+            </ul>
+            <ul class="icons">
+
+                <li class="nav__menu--item">
+                    <button>
+                        <img src="assets/images/search.svg" alt="search">
+                    </button>
+                </li>
+                <li class="nav__menu--item">
+                    <button>
+                        <img src="assets/images/account.svg" alt="account">
+                    </button>
+                </li>
+                <li class="nav__menu--item cart">
+                    <button>
+                        <img src="assets/images/cart.svg" alt="">
+                        <span class="nb_items">0</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <section id="categories">
+        <h1>Shop All</h1>
+        <div class="category">
+            <h3>Coffee</h3>
+            <a href="#">Single Origin</a>
+            <a href="#">Blend</a>
+            <a href="#">Espresso</a>
+            <a href="#">Decaf</a>
+        </div>
+        <div class="category">
+            <h3>Gear</h3>
+            <a href="#">Merch</a>
+            <a href="#">Brewers</a>
+            <a href="#">Grinders</a>
+
+        </div>
+
+    </section>
+    <section id="catalog">
+
+        <header>
+            <div>
+                <span>VIEWING</span>
+                <p data-reset="All Coffee">All Coffee</p>
+            </div>
+            <div class="filter-roast"></div>
+            <div class="filter-taste"></div>
+        </header>
+        <!--=============PRODUCTS==========-->
+        <!--=============PRODUCTS==========-->
+        <!--=============PRODUCTS==========-->
+        <!--=============PRODUCTS==========-->
+        <!--=============PRODUCTS==========-->
+        <!--=============PRODUCTS==========-->
+        <div class="products-container">
+
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product1.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Climate Project</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+                <!-- you"ll need a form to wrap the button (post request) containing product id
+                in a data-id attribute  
+               (to add the item to shopping cart table ); -->
+                <!-- also a div with display none that contains all info
+                (quantity , image , name , price ) for the shopping cart(frontend)   -->
+                <!-- all of the data should be dynamically typed-->
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product2.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Mt Kerinci Highlands</span>
+                        <h3>Sumatra Kerinci Valley Honey</h3>
+                        <span class="label">$19.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product3.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Minas Gerais</span>
+                        <h3>Brazil Araponga</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product4.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Cauca</span>
+                        <h3>Colombia El Tambo</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="clickbait">
+                <figure>
+                    <img src="assets/images/product5.webp" alt="product">
+                    <figcaption>
+                        <h2>Dial in at Home</h2>
+                        <p>
+                            Brewing beautiful coffee at home isn’t neuroscience.<br>
+                            All you need is the right equipment and a little know-how.
+                        </p>
+                        <a href="#gear">Shop Now</a>
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product6.webp" alt="product">
+                    <figcaption>
+                        <span class="label"></span>
+                        <h3>Blend Set</h3>
+                        <span class="label">$100.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product6.webp" alt="product">
+                    <figcaption>
+                        <span class="label"></span>
+                        <h3>Origin Set</h3>
+                        <span class="label">$100.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product7.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Cauca</span>
+                        <h3>Decaf Colombia</h3>
+                        <span class="label">$16.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product8.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Antithesis</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product9.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Colombia</span>
+                        <h3>Synthesis</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product10.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Peru + Colombia</span>
+                        <h3>Thesis</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product11.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Colombia + Brazil</span>
+                        <h3>Mass Appeal</h3>
+                        <span class="label">$16.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="product">
+                <figure>
+                    <img src="assets/images/product12.webp" alt="product">
+                    <figcaption>
+                        <span class="label">Colombia + Washed Ethiopia</span>
+                        <h3>Destroyer</h3>
+                        <span class="label">$16.00</span>
+                    </figcaption>
+                </figure>
+                <button data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <script src="assets/js/navbar.js"></script>
+
+</body>
+
+</html>

@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Poppins:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap');
 
 /*============= GENERAL CSS ===========*/
 *{
@@ -18,12 +20,15 @@ ul{
 
 :root{
     --main-font : 'Oxygen' ;
-    --secondary-font : "Poppins" ;
+    --secondary-font : "Poppins" ,sans-serif;
     --third-font : "Roboto" ;
+    --shop-primary-font: "PT Serif" ,sans-serif;
+    --serif-font: 'Lora' , serif ;
     
 
     /* colors*/
     --light-color : rgb(255,255,255,0.8) ; 
+    --beige-color: rgb(242, 238, 233);
     --yellowish-color:rgb(255, 239, 210,0.8) ;
     --primary-color :#251a06 ;
     --secondary-color: #0FB3C6;
@@ -34,12 +39,23 @@ ul{
     font-family:"Fontin" ;
     src: url('./Fontin\ Sans\ Regular.otf');
 }
-
+@font-face{
+    font-family:"Avenir" ;
+    src: url('./AvenirLTStd-Book.otf');
+}
+@font-face{
+    font-family:"Avenir2" ;
+    src: url('./AvenirLight.ttf');
+}
 /*========== NAVBAR ==============*/
+html{
+    scroll-behavior: smooth;
+}
 body{
     height: 100vh ;  
     width: 100vw;
     overflow-x: hidden;
+
 }
 header{
    
@@ -55,6 +71,13 @@ header{
     align-items: center;
     z-index: 100;
 }
+header.shop{
+    background-color: #0fb4c6b0;/*secondary color with opacity*/ 
+}
+header.shop .nav__menu--item :is(button,  img){
+    background: transparent;
+}
+
 .hamburger-wrapper{
     display: none;
 }
@@ -116,17 +139,18 @@ header{
     width: 100vw;
     background-color: white;
     top: 0;
-    left: 0 ; 
+    left: -100% ; 
     padding: 70px 30px;
     display: flex; 
     align-items: center;
     justify-content:center;
     flex-direction:column ;
-    transform: translateX(-100%);
-    transition : transform 0.5s ease; 
+    transform: translateX(0);
+    transition : transform 0.5s ease;
 }
 .mobile-nav.active{
-    transform: translateX(0);
+    
+    transform: translateX(100%);
 }
 .mobile-nav .nav__menu{
      display: flex ; 
@@ -439,8 +463,84 @@ header{
     width: 1.5rem;
 }
 
+footer{
+    height: 50vh;
+    width: 100%;
+    padding: 50px 50px 0 50px;
+    display: flex ;
+    flex-direction:column ;
+    align-items:center;
+}
+footer h3{
+    font-family: var(--main-font);
+}
+.social-media{
+    width:20%;
+    display: flex;
+    justify-content:space-around;
+    font-size: 1.8rem;
+    margin:2rem 0 3rem;
+}
+.social-media i{
+    cursor:pointer;
+    transition: transform 0.3s ease;
+}
+.social-media i:hover{
+    transform: scale(1.3);
+}
+.social-media i.fb:hover{
+    color:#4267B2;
+}
+.social-media i.twitter:hover{
+    color:#1DA1F2;
+}
 
-
+.social-media i.insta:hover{
+    background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+ 
+}
+.footer-menu{
+    display:flex; 
+    width: 40%;
+    justify-content: space-between;   
+    margin-bottom: 4rem;
+}
+.footer-menu a:link{
+    color: black;
+    transition: all 0.2s ease;
+    font-size: 1.4rem;
+    font-family: var(--secondary-font);
+    
+}
+.footer-menu a:hover{
+    transform: scale(1.1);
+    text-decoration:underline;
+}
+.footer-menu a:visited{
+   color: rgb(83, 83, 83);
+}
+.sub-footer{
+   text-align: center;
+}
+.sub-footer h6{
+    font-size:1.1rem;
+    margin-bottom: 1.2rem;
+    
+}
+.sub-footer p:first-of-type{
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: .6rem;
+    text-transform: lowercase;
+}
+.sub-footer p{
+   font-family: var(--main-font) ;
+   font-size:.8rem;
+}
 @media screen and (max-width:800px){
     body{
         width: 100%;
@@ -514,3 +614,245 @@ header{
     }
 }
 
+
+
+
+/*====================== SHOP PAGE ======================*/
+/*====================== SHOP PAGE ======================*/
+/*====================== SHOP PAGE ======================*/
+/*====================== SHOP PAGE ======================*/
+
+
+#categories{
+    background-color: rgb(252, 251, 249);
+    width: 100%;
+    height: 60%;
+    margin-top: 6rem;
+    display:grid ;
+    grid-template-columns: 18% 10% 10%; 
+    grid-template-rows: 1fr;
+    padding:150px 80px 50px;
+}
+#categories h1{
+    grid-row: 1/2;
+ grid-column: 1/2;
+ font-size: 2.7rem;
+ font-family: var(--shop-primary-font);
+ font-weight: 400;
+}
+.category:last-child{
+    grid-column: 3/4;
+   
+}
+.category{
+    height: 50%;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    padding-top: 1.3rem;
+    font-family:"Avenir" ;
+}
+.category h3{
+    font-size: 1.2rem;
+    letter-spacing:0.5px;
+    margin-bottom:2rem;
+    font-weight: 200;
+    color: rgba(34, 34, 34, 0.623);
+    font-family:"Avenir" ;
+    text-transform: uppercase;
+}
+.category a{
+    font-family:"Avenir" ;
+    font-size:1.1rem;
+    font-weight:200;
+    color: rgba(34, 34, 34);
+    display: block;
+    margin-top:.7rem;
+}
+
+#catalog :is(a, h1, h2, h3, h4, h5, h6, p, span){
+    font-family:"Avenir2";
+
+}
+#catalog{
+    width: 100%;
+    background-color:rgb(252, 251, 249) ;
+    position: relative;
+}
+#catalog header{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 7rem;
+    color: white;
+    background-color:#0fb4c6a1 ;
+    z-index:1;
+}
+.products-container{
+    width: 100vw;
+    height: auto;
+    padding:12rem 4rem;
+    display:grid ;
+    grid-template-columns: repeat(3,1fr); 
+    justify-items:center;
+    grid-gap : 5rem;
+    
+    
+}
+.product{
+   width: 100%;
+   height: fit-content;
+   position: relative;
+   display: flex ;
+   justify-content:center;
+   overflow: hidden;
+   margin-bottom: 3rem;
+}
+
+
+.product figure{
+    width:100%;
+    overflow:hidden;
+}
+
+.product figure img{
+   width:100%;
+   height: 100%;
+   transition : transform 0.8s cubic-bezier(0.28, 0, 0.18, 1);
+}
+.product figcaption{
+    position:absolute;
+    width: 80%;
+    top: 82%;
+    left: 50%;
+    transform:translateX(-50%);
+    opacity:1;
+    transition: opacity 0.4s cubic-bezier(0.28, 0, 0.18, 1) 0.3s;
+    text-align: center;
+ 
+}
+.product .label{
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    font-size: .9rem;
+    opacity: 0.8;
+    font-weight: 500;
+    font-family: 'Avenir' ,sans-serif;
+}
+.product h3{
+    font-size: 1.3rem;
+    line-height:2;
+    font-weight: 400;
+    font-family: 'Avenir' ,sans-serif;
+}
+.product a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.product button{
+    width: 9rem;
+    height: 2.8rem;
+    background-color:black;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top:100%;
+    left: 50% ;
+    transform: translateX(-50%) translateY(0);  
+    transition: transform 0.3s cubic-bezier(0.28, 0, 0.18, 1);
+
+    border: none;
+    font-family: var(--main-font) , sans-serif;
+    text-transform: uppercase; 
+    letter-spacing:2px;
+    z-index:50;
+}
+
+/* product hover effects*/
+.product:hover img{
+    transform: scale(1.07);
+  
+}
+.product:hover button{
+    transform: translateX(-50%) translateY(-200%); 
+    transition: transform 0.3s cubic-bezier(0.28, 0, 0.18, 1) 0.5s ,
+                background-color 0.3s ease, color .3s ease ;  
+}
+.product:hover figcaption{
+   opacity:0;
+   transition: opacity 0.4s cubic-bezier(0.28, 0, 0.18, 1) 0.1s;
+}
+.product button:hover{
+    background-color: white ;
+    color: black; 
+}
+
+.clickbait{
+   width:100% ;
+   height: fit-content;
+   background-color:#3e4941; 
+   grid-column: 2 / -1;
+   
+    
+}
+.clickbait figure{
+     width:100% ;
+     display: flex ;
+   
+     align-items: center;
+}
+.clickbait figure img{
+     width: calc(50% - 2.5rem);
+}
+
+.clickbait figure figcaption{
+    width:100%;
+    padding: 3rem;
+    text-align: center;
+}
+.clickbait h2{
+    font-family: var(--serif-font) !important;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 400;
+}
+.clickbait p{
+    line-height:1.5;
+    color: white;
+    opacity:0.7;
+    font-size: 1.03rem;
+    font-weight:400;
+    margin-bottom: 20px;
+}
+.clickbait a{
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.14rem;
+    color: white;
+    position: relative;
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: opacity 0.5s cubic-bezier(0.28, 0, 0.18, 1);
+}
+.clickbait a::after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    margin-top: 10px;
+    height: 1px;
+    background: white;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.28, 0, 0.18, 1);
+}
+
+.clickbait a:hover::after{
+    transition: transform 0.5s cubic-bezier(0.28, 0, 0.18, 1) 0.2s;
+    transform: translateX(-50%) scaleX(1);
+}

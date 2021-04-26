@@ -1,176 +1,122 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Coffee Shop</title>
-        <meta name="description" content="E-commerce website">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="assets/css/styles.css">
-    </head>
-    <body>
+<html lang="en">
 
-        <header>
-            <div class="hamburger-wrapper">
-                <div class="hamburger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coffee Shop</title>
+    <meta name="description" content="E-commerce website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="hamburger-wrapper">
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
-            <nav class="mobile-nav" aria-label="aside mobile nav">
-            
-                <h3>Explore</h3>
-                <ul class="nav__menu">
-                    <li class="nav__menu--item"><a href="">SHOP</a></li>
-                    <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
-                    <li class="nav__menu--item"><a href="">LEARN</a></li>
-                    <li class="nav__menu--item"><a href="">ABOUT US</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="logo active">
-                <img src="assets/images/logo.svg" alt="logo">
-            </a>
-
-            <nav class="desktop-nav" aria-label="desktop nav">
-                <ul class="nav__menu">
-                    <li class="nav__menu--item"><a href="">SHOP</a></li>
-                    <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
-                    <li class="nav__menu--item"><a href="">LEARN</a></li>
-                    <li class="nav__menu--item"><a href="">ABOUT US</a></li>
-                   
-                </ul>
-                <ul class="icons">
-                   
-                    <li class="nav__menu--item">
-                        <button >
-                        <img src="assets/images/search.svg" alt="search">
-                        </button>
-                    </li>
-                    <li class="nav__menu--item">
-                        <button>
-                        <img src="assets/images/account.svg" alt="account">
-                        </button>
-                    </li> 
-                    <li class="nav__menu--item cart">
-                        <button>
-                            <img src="assets/images/cart.svg" alt="">
-                            <span class="nb_items">0</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-            
-        </header>
-        <section id="main">
-           
-                <div class="hero-card">
-                    <div class="content">
-                            <h1>All New: Easy Pour </h1>
-                            <p>Just pour hot water!</p>
-                            <button>Shop Now</button>
-                    </div>
-                    
-                </div>
-           
-        </section>
-        <section id="mission">
-                <p>
-                    Our mission since we started has stayed simple: introduce our customers to the estates we directly buy our great tasting coffee from, roast the beans with care, and make high quality coffee more accessible through our cafes and our website. The coffee we roast is the coffee we like to drink, and we hope you like it too.
-                </p>
-         </section>
-         <section id="explore">
-             <div class="left-section">
-                 <div class="explore--img"></div>
-                 <button class="explore--btn">Our farms</button>
-             </div>
-             <div class="right-section">
-                   <div class="top">
-                        <div class="explore--img"></div>
-                        <button class="explore--btn">visit our cafes</button>
-                   </div>
-                   <div class="bottom">
-                       <h3>STAY UPDATED WITH BLUE TOKAI COFFEE</h3>
-                       <p>Sign up for stories, coffee tips, and brewing equipment</p>
-                       <form method='post' enctype='multipart/form' autocomplete="on">
-                           <div>
-                               <input type="email" placeholder="you@yourdomain.com" autocomplete="on" required>
-                               <span class="dot">&#9679;</span>
-                               <p>Please complete this required field.</p>
-                           </div>
-                            
-                            <button>
-                                
-                                 <img src="assets/images/submit.svg" alt="">
-                            </button>
-                       </form>
-                   </div>
-             </div>
-         </section>
-         <!-- <section id="discover">
-             <div class="right-section">
-                 <h3></h3>
-                 <iframe title="vimeo-player" src="https://player.vimeo.com/video/285055893" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-             </div>
-             <div class="left-section">
-                 <h3></h3>
-                 <div class="gallery">
-
-                 </div>
-             </div>
-         </section>
-         <footer>
-             <div>
-                    <div>
-                        <h3>Shop Online</h3>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                    </div>
-                    <div>
-                        <h3>Contact Us</h3>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                    </div>
-                    <div>
-                        <h3>Visit Us</h3>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                    </div>
-                    <div>
-                        <h3>Our farms</h3>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                    </div>
-                    <div>
-                        <h3>Shop Online</h3>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                    </div>
-                    <div>
-                        <h3>Shop Online</h3>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                        <a href=""></a>
-                    </div>
         </div>
-         </footer> -->
-       <script src="assets/js/main.js"></script>
-    </body>
+        <nav class="mobile-nav" aria-label="aside mobile nav">
+
+            <h3>Explore</h3>
+            <ul class="nav__menu">
+                <li class="nav__menu--item"><a href="shop.html">SHOP</a></li>
+                <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a href="">LEARN</a></li>
+                <li class="nav__menu--item"><a href="">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="logo active">
+            <img src="assets/images/logo.svg" alt="logo">
+        </a>
+
+        <nav class="desktop-nav" aria-label="desktop nav">
+            <ul class="nav__menu">
+                <li class="nav__menu--item"><a href="shop.html">SHOP</a></li>
+                <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a href="">LEARN</a></li>
+                <li class="nav__menu--item"><a href="">ABOUT US</a></li>
+
+            </ul>
+            <ul class="icons">
+
+                <li class="nav__menu--item">
+                    <button>
+                        <img src="assets/images/search.svg" alt="search">
+                    </button>
+                </li>
+                <li class="nav__menu--item">
+                    <button>
+                        <img src="assets/images/account.svg" alt="account">
+                    </button>
+                </li>
+                <li class="nav__menu--item cart">
+                    <button>
+                        <img src="assets/images/cart.svg" alt="">
+                        <span class="nb_items">0</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <section id="main">
+
+        <div class="hero-card">
+            <div class="content">
+                <h1>All New: Easy Pour </h1>
+                <p>Just pour hot water!</p>
+                <button>Shop Now</button>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="mission">
+        <p>
+            Our mission since we started has stayed simple: introduce our customers to the estates we directly buy our
+            great tasting coffee from, roast the beans with care, and make high quality coffee more accessible through
+            our cafes and our website. The coffee we roast is the coffee we like to drink, and we hope you like it too.
+        </p>
+    </section>
+    <section id="explore">
+        <div class="left-section">
+            <div class="explore--img"></div>
+            <button class="explore--btn">Our farms</button>
+        </div>
+        <div class="right-section">
+            <div class="top">
+                <div class="explore--img"></div>
+                <button class="explore--btn">visit our cafes</button>
+            </div>
+            <div class="bottom">
+                <h3>STAY UPDATED WITH BLUE TOKAI COFFEE</h3>
+                <p>Sign up for stories, coffee tips, and brewing equipment</p>
+                <form method='post' enctype='multipart/form' autocomplete="on">
+                    <div>
+                        <input type="email" placeholder="you@yourdomain.com" autocomplete="on" required>
+                        <span class="dot">&#9679;</span>
+                        <p>Please complete this required field.</p>
+                    </div>
+
+                    <button>
+
+                        <img src="assets/images/submit.svg" alt="">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="assets/js/navbar.js"></script>
+</body>
+
 </html>
