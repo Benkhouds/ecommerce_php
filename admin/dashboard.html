@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <img src="../assets/images/logo-dark.svg" alt="logo">
+            <h1>Blue Tokai</h1>
+        </div>
+        <ul class="menu">
+            <li class="menu__item">
+                <a href="">Dashboard</a>
+            </li>
+            <li class="menu__item">
+                <a href="" data-id="0" class="section__link">Users</a>
+            </li>
+            <li class="menu__item dropdown">
+
+                <a href="">Management <i class='bx bxs-down-arrow arrow'></i></a>
+
+                <ul class="menu__sub">
+                    <li class="menu__item--sub dropdown">
+                        <a href="">Product Management <i class='bx bxs-down-arrow arrow'></i></a>
+                        <ul class="menu__sub">
+                            <li class="menu__item--sub">
+                                <a href="" data-id="1" class="section__link">View Products</a>
+                            </li>
+
+                            <li class="menu__item--sub">
+                                <a href="" data-id="2" class="section__link">Add Product</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="menu__item--sub dropdown">
+                        <a href="">Category Management <i class='bx bxs-down-arrow arrow'></i></a>
+                        <ul class="menu__sub">
+                            <li class="menu__item--sub ">
+                                <a href="" data-id="3" class="section__link">View Categories</a>
+                            </li>
+                            <li class="menu__item--sub">
+                                <a href="" data-id="4" class="section__link">Add Category</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="menu__item--sub">
+                        <a href="" class="section__link" data-id="5">Orders</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </nav>
+    <header class="navbar">
+        <a href="" class="fancy-link" style="color:white; margin-left: auto;">Logout</a>
+    </header>
+    <section id="users">
+        <h1 class="primary-title">Users</h1>
+        <table class="users-table">
+            <thead class="table-head">
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+        </table>
+    </section>
+    <section id="addProduct">
+        <h1>Add Product</h1>
+        <form enctype="multipart/form-data">
+            <label for="origin">Origin:</label>
+            <input type="text" name="origin">
+            <label for="label">Label:</label>
+            <input type="text" name="label">
+            <label for="category">Category:</label> <br>
+            <select id="category" name="category">
+            </select> <br><br>
+            <label for="price">Price:</label>
+            <input type="number" name="price" min="1">
+            <label for="stock">Inventory:</label>
+            <input type="number" name="stock" min="1">
+
+
+
+
+            <div id="image">
+                <img id="output">
+                <label class="primary-btn" for="file">Add Image</label>
+                <input id="file" type="file" name="image">
+            </div>
+            <button class="primary-btn add" style="margin-top:2rem;">Add Product</button>
+        </form>
+    </section>
+
+
+    <section id="products">
+        <h1 class="primary-title">Products</h1>
+        <div class="products-container">
+
+        </div>
+
+    </section>
+    <section id="categories">
+        <h1 class="primary-title">Categories</h1>
+        <table class="categories-table">
+            <thead class="table-head">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Label</th>
+                    <th scope="col">Sub Category</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-row">
+                    <td>
+
+                        <p>15</p>
+                    </td>
+                    <form enctype="multipart/form-data">
+                        <td>
+                            <input type="text" value="coffee">
+                        </td>
+                        <td>
+                            <input type="text" value="coffee">
+                        </td>
+                    </form>
+                    <td>
+
+                        <a href="" class="fancy-link">Update</a>
+                        <a href="" class="fancy-link">Remove</a>
+                    </td>
+                </tr>
+                <tr class="table-row">
+                    <td>
+
+                        <input type="number" value="15">
+                    </td>
+                    <td>
+                        <input type="text" value="coffee">
+                    </td>
+                    <td>
+
+                        <a href="" class="fancy-link">Update</a>
+                        <a href="" class="fancy-link">Remove</a>
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+    </section>
+    <section id="addCategory">
+        <h1 class="primary-title">Add Category</h1>
+        <form>
+            <label for="category">Label:</label>
+            <input type="text" name="label">
+            <label for="sub_cat">Sub Category :</label>
+            <input type="text" name="sub_cat">
+            <button class="primary-btn" style="margin-top:2rem;width:12rem;">Add Category</button>
+        </form>
+    </section>
+    <section id="dash">
+        <div>
+            <p>150</p>
+            <h3>Total Orders</h3>
+        </div>
+        <div>
+            <p>150</p>
+            <h3>Total Revenue</h3>
+        </div>
+        <div>
+            <p>150</p>
+            <h3>Users</h3>
+        </div>
+    </section>
+    <!--  <section id="coupons">
+        <h1 class="primary-title">Coupons</h1>
+        <table class="categories-table">
+            <thead class="table-head">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Discount (%)</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-row">
+                    <td>
+
+                        <p>15</p>
+                    </td>
+                    <td>
+                        <input style="display:inline-block;" type="number" value="15">
+                    </td>
+                    <td>
+
+                        <a href="" class="fancy-link">Update</a>
+                        <a href="" class="fancy-link">Remove</a>
+                    </td>
+                </tr>
+
+                <tr class="table-row">
+                    <td>
+
+                        <p>15</p>
+                    </td>
+                    <td>
+                        <input style="display:inline-block;" type="number" value="15">
+                    </td>
+                    <td>
+
+                        <a href="" class="fancy-link">Update</a>
+                        <a href="" class="fancy-link">Remove</a>
+                    </td>
+                </tr>
+
+
+
+
+            </tbody>
+
+        </table>
+    </section> -->
+    <section id="orders">
+        <h1 class="primary-title">Orders</h1>
+        <table class="orders-table" aria-describedby="orders">
+            <thead class="table-head">
+                <tr>
+                    <th scope="col">ID / UserID</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col" style="margin-left:2rem;">Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </section>
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>

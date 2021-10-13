@@ -10,11 +10,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accountIcon = document.getElementById('accountIcon');
+            console.log(accountIcon);
+            accountIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!sessionStorage.getItem('logged')) {
+                    location.href = "login.html";
+
+
+                } else {
+                    location.href = "account.html";
+                }
+            });
+        })
+    </script>
 </head>
 
 <body>
 
-    <header>
+    <header class="index">
         <div class="hamburger-wrapper">
             <div class="hamburger">
                 <div class="line1"></div>
@@ -33,31 +49,31 @@
             </ul>
         </nav>
         <a href="index.html" class="logo active">
-            <img src="assets/images/logo.svg" alt="logo">
+            <img src="assets/images/logo-dark.svg" alt="logo">
         </a>
 
         <nav class="desktop-nav" aria-label="desktop nav">
             <ul class="nav__menu">
-                <li class="nav__menu--item"><a href="shop.html">SHOP</a></li>
-                <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
-                <li class="nav__menu--item"><a href="">LEARN</a></li>
-                <li class="nav__menu--item"><a href="">ABOUT US</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="shop.html">SHOP</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">LEARN</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">ABOUT US</a></li>
 
             </ul>
             <ul class="icons">
 
                 <li class="nav__menu--item">
-                    <button>
+                    <button class="nav__menu--icon">
                         <img src="assets/images/search.svg" alt="search">
                     </button>
                 </li>
                 <li class="nav__menu--item">
-                    <button>
+                    <a class="nav__menu--icon" id="accountIcon" href="">
                         <img src="assets/images/account.svg" alt="account">
-                    </button>
+                    </a>
                 </li>
                 <li class="nav__menu--item cart">
-                    <button>
+                    <button class="nav__menu--icon accountIcon">
                         <img src="assets/images/cart.svg" alt="">
                         <span class="nb_items">0</span>
                     </button>
@@ -66,6 +82,17 @@
         </nav>
 
     </header>
+    <div class="veil"></div>
+    <section id="minicart-wrapper">
+        <i class="close">&times;</i>
+        <div class="minicart-items">
+
+
+        </div>
+        <footer class="cart-footer">
+            <a href="shoppingcart.html" class="primary-btn continue-btn">Continue to cart</a>
+        </footer>
+    </section>
     <section id="main">
 
         <div class="hero-card">
@@ -117,6 +144,7 @@
 
 
     <script src="assets/js/navbar.js"></script>
+    <script type="module" src="assets/js/mini-cart.js"></script>
 </body>
 
 </html>

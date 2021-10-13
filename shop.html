@@ -10,11 +10,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const accountIcon = document.getElementById('accountIcon');
+            console.log(accountIcon);
+            accountIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!sessionStorage.getItem('logged')) {
+                    location.href = "login.html";
+
+
+                } else {
+                    location.href = "account.html";
+                }
+            });
+
+
+            if (document.cookie) {
+                let cookie = document.cookie.split(';')[1] == undefined ? null : document.cookie.split(';')[1];
+                if (cookie) {
+                    const cookieName = cookie.slice(0, cookie.indexOf('='));
+                    console.log(cookieName);
+                    /* if (cookie.slice(cookie.indexOf('=') + 1).trim() == "success") {
+                        let successMessage = document.getElementById('success');
+                        console.log(successMessage);
+                        successMessage.style.display = "block";
+
+                        setTimeout(() => {
+                            successMessage.style.display = "none";
+                        }, 3000);
+                    } */
+                }
+            }
+        });
+    </script>
+
+
 </head>
+
 
 <body>
 
-    <header class="shop">
+    <header class="navbar">
         <div class="hamburger-wrapper">
             <div class="hamburger">
                 <div class="line1"></div>
@@ -33,39 +70,56 @@
             </ul>
         </nav>
         <a href="index.html" class="logo">
-            <img src="assets/images/logo-light.svg" alt="logo">
+            <img src="assets/images/logo-dark.svg" alt="logo">
         </a>
 
         <nav class="desktop-nav" aria-label="desktop nav">
             <ul class="nav__menu">
-                <li class="nav__menu--item"><a href="shop.html">SHOP</a></li>
-                <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
-                <li class="nav__menu--item"><a href="">LEARN</a></li>
-                <li class="nav__menu--item"><a href="">ABOUT US</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="shop.html">SHOP</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">LEARN</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">ABOUT US</a></li>
 
             </ul>
             <ul class="icons">
 
                 <li class="nav__menu--item">
-                    <button>
+                    <button class="nav__menu--icon">
                         <img src="assets/images/search.svg" alt="search">
                     </button>
                 </li>
                 <li class="nav__menu--item">
-                    <button>
+                    <a class="nav__menu--icon" id="accountIcon" href="">
                         <img src="assets/images/account.svg" alt="account">
-                    </button>
+                    </a>
                 </li>
                 <li class="nav__menu--item cart">
-                    <button>
+                    <button class="nav__menu--icon">
                         <img src="assets/images/cart.svg" alt="">
-                        <span class="nb_items">0</span>
+                        <span class="nb_items" data-count="0">0</span>
                     </button>
                 </li>
             </ul>
         </nav>
 
     </header>
+    <div id="success">
+        Order has been added successfully
+    </div>
+    <div class="veil"></div>
+    <section id="minicart-wrapper">
+        <i class="close">&times;</i>
+        <div class="minicart-items">
+
+        </div>
+        <footer class="cart-footer">
+            <a href="shoppingcart.html" class="primary-btn continue-btn">Continue to cart</a>
+        </footer>
+
+
+
+    </section>
+
     <section id="categories">
         <h1>Shop All</h1>
         <div class="category">
@@ -84,11 +138,11 @@
         </div>
 
     </section>
-    <section id="catalog">
+    <section id="coffee-catalog">
 
         <header>
             <div>
-                <span>VIEWING</span>
+                <span class="label">VIEWING</span>
                 <p data-reset="All Coffee">All Coffee</p>
             </div>
             <div class="filter-roast"></div>
@@ -100,28 +154,159 @@
         <!--=============PRODUCTS==========-->
         <!--=============PRODUCTS==========-->
         <!--=============PRODUCTS==========-->
-        <div class="products-container">
-
-            <article class="product">
+        <div class="coffee-container">
+            
+            <article class="coffee__product">
                 <figure>
-                    <img src="assets/images/product1.webp" alt="product">
+                    <img src="assets/images/product1.webp" alt="gear">
                     <figcaption>
                         <span class="label">Brazil</span>
                         <h3>Climate Project</h3>
                         <span class="label">$15.00</span>
                     </figcaption>
                 </figure>
-                <!-- you"ll need a form to wrap the button (post request) containing product id
-                in a data-id attribute  
-               (to add the item to shopping cart table ); -->
-                <!-- also a div with display none that contains all info
-                (quantity , image , name , price ) for the shopping cart(frontend)   -->
-                <!-- all of the data should be dynamically typed-->
-                <button data-product="climate">Add to cart</button>
+
+                <button class="primary-btn" data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="coffee__product">
+                <figure>
+                    <img src="assets/images/product1.webp" alt="gear">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Climate Project</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+
+                <button class="primary-btn" data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="coffee__product">
+                <figure>
+                    <img src="assets/images/product1.webp" alt="gear">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Climate Project</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+
+                <button class="primary-btn" data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="coffee__product">
+                <figure>
+                    <img src="assets/images/product1.webp" alt="gear">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Climate Project</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+
+                <button class="primary-btn" data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="coffee__product">
+                <figure>
+                    <img src="assets/images/product1.webp" alt="gear">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Climate Project</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+
+                <button class="primary-btn" data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="coffee__product">
+                <figure>
+                    <img src="assets/images/product1.webp" alt="gear">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Climate Project</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+
+                <button class="primary-btn" data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+            <article class="coffee__product">
+                <figure>
+                    <img src="assets/images/product1.webp" alt="gear">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Climate Project</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+
+                <button class="primary-btn" data-product="climate">Add to cart</button>
                 <a href="#"></a>
             </article>
 
-            <article class="product">
+        </div>
+
+    </section>
+
+    <section id="gear-intro">
+        <h1>Gear</h1>
+        <div class="container">
+            <figure class="left-figure">
+                <figcaption>
+                    <h2>We have everything you need to make great coffee at home.</h2>
+                    <span class="label">COFFEE FOR ONE</span>
+                </figcaption>
+                <img src="assets/images/gear-main1.jpg" alt="">
+            </figure>
+            <div class="inner-container">
+                <figure class="right-figure">
+                    <figcaption>
+                        <span class="label">AEROPRESS</span>
+                    </figcaption>
+                    <img src="assets/images/gear-main2.jpg" alt="">
+                </figure>
+                <aside>
+                    <p>
+                        Featuring coffee gear that we love from brands like Aeropress, Chemex, Bonavita, and more.
+                    </p>
+                    <a href="#gear-catalog" class="fancy-link">Shop Below</a>
+                </aside>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="gear-catalog">
+        <header>
+            <div>
+                <span>VIEWING</span>
+                <p data-reset="All Gear">All Gear</p>
+            </div>
+            <div class="filter-roast"></div>
+            <div class="filter-taste"></div>
+        </header>
+
+        <div class="gears-container">
+
+            <article class="gear__product">
+                <figure>
+                    <img src="assets/images/product1.webp" alt="gear">
+                    <figcaption>
+                        <span class="label">Brazil</span>
+                        <h3>Climate Project</h3>
+                        <span class="label">$15.00</span>
+                    </figcaption>
+                </figure>
+
+                <button class="primary-btn" data-product="climate">Add to cart</button>
+                <a href="#"></a>
+            </article>
+
+            <article class="gear__product">
                 <figure>
                     <img src="assets/images/product2.webp" alt="product">
                     <figcaption>
@@ -130,151 +315,21 @@
                         <span class="label">$19.00</span>
                     </figcaption>
                 </figure>
-                <button data-product="climate">Add to cart</button>
+                <button class="primary-btn" data-product="climate">Add to cart</button>
                 <a href="#"></a>
             </article>
-
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product3.webp" alt="product">
-                    <figcaption>
-                        <span class="label">Minas Gerais</span>
-                        <h3>Brazil Araponga</h3>
-                        <span class="label">$15.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product4.webp" alt="product">
-                    <figcaption>
-                        <span class="label">Cauca</span>
-                        <h3>Colombia El Tambo</h3>
-                        <span class="label">$15.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-            <article class="clickbait">
-                <figure>
-                    <img src="assets/images/product5.webp" alt="product">
-                    <figcaption>
-                        <h2>Dial in at Home</h2>
-                        <p>
-                            Brewing beautiful coffee at home isn’t neuroscience.<br>
-                            All you need is the right equipment and a little know-how.
-                        </p>
-                        <a href="#gear">Shop Now</a>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product6.webp" alt="product">
-                    <figcaption>
-                        <span class="label"></span>
-                        <h3>Blend Set</h3>
-                        <span class="label">$100.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product6.webp" alt="product">
-                    <figcaption>
-                        <span class="label"></span>
-                        <h3>Origin Set</h3>
-                        <span class="label">$100.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product7.webp" alt="product">
-                    <figcaption>
-                        <span class="label">Cauca</span>
-                        <h3>Decaf Colombia</h3>
-                        <span class="label">$16.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product8.webp" alt="product">
-                    <figcaption>
-                        <span class="label">Brazil</span>
-                        <h3>Antithesis</h3>
-                        <span class="label">$15.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product9.webp" alt="product">
-                    <figcaption>
-                        <span class="label">Colombia</span>
-                        <h3>Synthesis</h3>
-                        <span class="label">$15.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product10.webp" alt="product">
-                    <figcaption>
-                        <span class="label">Peru + Colombia</span>
-                        <h3>Thesis</h3>
-                        <span class="label">$15.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product11.webp" alt="product">
-                    <figcaption>
-                        <span class="label">Colombia + Brazil</span>
-                        <h3>Mass Appeal</h3>
-                        <span class="label">$16.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-            <article class="product">
-                <figure>
-                    <img src="assets/images/product12.webp" alt="product">
-                    <figcaption>
-                        <span class="label">Colombia + Washed Ethiopia</span>
-                        <h3>Destroyer</h3>
-                        <span class="label">$16.00</span>
-                    </figcaption>
-                </figure>
-                <button data-product="climate">Add to cart</button>
-                <a href="#"></a>
-            </article>
-
         </div>
-
     </section>
 
 
+
+
     <script src="assets/js/navbar.js"></script>
+    <script type="module" src="assets/js/mini-cart.js"></script>
+    <script type="module" src="assets/js/shop.js"></script>
+    <script type="module" src="assets/js/logged.js"></script>
+
+
 
 </body>
 

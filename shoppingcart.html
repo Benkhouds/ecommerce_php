@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coffee Shop</title>
+    <meta name="description" content="E-commerce website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accountIcon = document.getElementById('accountIcon');
+            console.log(accountIcon);
+            accountIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!sessionStorage.getItem('logged')) {
+                    location.href = "login.html";
+
+                } else {
+                    location.href = "account.html";
+                }
+            });
+        })
+    </script>
+</head>
+
+
+<body>
+    <header class="navbar">
+
+        <div class=" hamburger-wrapper">
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <!--MOBILE NAV-->
+        <nav class="mobile-nav" aria-label="aside mobile nav">
+            <h3>Explore</h3>
+            <ul class="nav__menu">
+                <li class="nav__menu--item "><a href="shop.html">SHOP</a></li>
+                <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a href="">LEARN</a></li>
+                <li class="nav__menu--item"><a href="">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <!--LOGO-->
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo-dark.svg" alt="logo">
+        </a>
+        <!--DESKTOP NAV-->
+        <nav class="desktop-nav" aria-label="desktop nav">
+
+            <ul class="nav__menu">
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="shop.html">SHOP</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">LEARN</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">ABOUT US</a></li>
+            </ul>
+
+            <ul class="icons">
+                <li class="nav__menu--item">
+                    <button class="nav__menu--icon">
+                        <img src="assets/images/search.svg" alt="search">
+                    </button>
+                </li>
+                <li class="nav__menu--item">
+                    <a class="nav__menu--icon " id="accountIcon" href="">
+                        <img src="assets/images/account.svg" alt="account">
+                    </a>
+                </li>
+                <li class="nav__menu--item cart">
+                    <button class="nav__menu--icon">
+                        <img src="assets/images/cart.svg" alt="">
+                        <span class="nb_items" data-count="0"></span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="success">
+        Order has been added successfully
+    </div>
+    <div class="veil"></div>
+    <section id="minicart-wrapper">
+        <i class="close">&times;</i>
+        <div class="minicart-items">
+
+            <div class="item" data-quantity="1" data-product="cafe" data-price="19">
+                <img src="assets/images/product17.jpg" alt="">
+                <h1>Sumatra Kerinci Valley Honey</h1>
+                <p class="price">19.00$</p>
+                <div class="modify">
+                    <a href="" class="fancy-link">Remove</a>
+                    &nbsp;/&nbsp;
+                    <a href="shoppingcart.html" class="fancy-link">Edit</a>
+                </div>
+            </div>
+            <div class="item" data-quantity="1" data-price="19">
+                <img src="assets/images/product17.jpg" alt="">
+                <h1>Sumatra Kerinci Valley Honey</h1>
+                <p class="price">19.00$</p>
+                <div class="modify">
+                    <a href="" class="fancy-link">Remove</a>
+                    &nbsp;/&nbsp;
+                    <a href="shoppingcart.html" class="fancy-link">Edit</a>
+                </div>
+            </div>
+
+        </div>
+        <footer class="cart-footer">
+            <button class="primary-btn continue-btn">Continue to cart</button>
+        </footer>
+    </section>
+
+    <section id="cart-description">
+
+
+        <h1 class="login__title--primary">Shopping Cart</h1>
+
+        <p>
+            Need Assistance?
+            info@ceremonycoffee.com
+            (410) 626-0011
+        </p>
+
+    </section>
+    <section id="cart-items">
+        <form>
+            <table class="cart-table">
+                <thead class="table-head">
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-row">
+                        <td>
+                            <img src="assets/images/product1.webp" alt="">
+                            <p class="label"> Brazil<br><br>Tanzania Lungwa <br></p>
+                        </td>
+                        <td>
+                            $19.00
+                        </td>
+                        <td>
+                            <input type="number" name="quantity" value="1" min="1">
+                        </td>
+                        <td>
+                            <span class="price">$85</span>
+                            <a href="" class="fancy-link">Remove</a>
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+                <tfoot>
+                    <tr class="footer-row">
+                        <td>
+                            <p>Total:<span class="cartTotal">&nbsp;&nbsp;<strong>0</strong></span></p>
+                            <button class="primary-btn checkout">Checkout</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+        </div>
+    </section>
+
+
+
+</body>
+<script src="assets/js/navbar.js"></script>
+<script type="module" src="assets/js/mini-cart.js"></script>
+<script src="assets/js/showCartItems.js"></script>
+<script src="assets/js/order.js"></script>
+<script src="assets/js/logged.js"></script>
+
+</html>

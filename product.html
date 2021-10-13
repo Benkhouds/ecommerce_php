@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coffee Shop</title>
+    <meta name="description" content="E-commerce website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const account = document.querySelector('#accountIcon');
+            if (sessionStorage.getItem('logged') == null) {
+
+                account.href = "login.html"
+            } else {
+                account.href = "account.html"
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="hamburger-wrapper">
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <nav class="mobile-nav" aria-label="aside mobile nav">
+
+            <h3>Explore</h3>
+            <ul class="nav__menu">
+                <li class="nav__menu--item"><a href="">SHOP</a></li>
+                <li class="nav__menu--item"><a href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a href="">LEARN</a></li>
+                <li class="nav__menu--item"><a href="">ABOUT US</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo-dark.svg" alt="logo">
+        </a>
+
+        <nav class="desktop-nav" aria-label="desktop nav">
+            <ul class="nav__menu">
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="shop.html">SHOP</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">OUR CAFES</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">LEARN</a></li>
+                <li class="nav__menu--item"><a class="nav__menu--link fancy-link" href="">ABOUT US</a></li>
+
+            </ul>
+            <ul class="icons">
+
+                <li class="nav__menu--item">
+                    <button class="nav__menu--icon">
+                        <img src="assets/images/search.svg" alt="search">
+                    </button>
+                </li>
+                <li class="nav__menu--item">
+                    <a class="nav__menu--icon" id="accountIcon" href="">
+                        <img src="assets/images/account.svg" alt="account">
+                    </a>
+                </li>
+                <li class="nav__menu--item cart">
+                    <button class="nav__menu--icon">
+                        <img src="assets/images/cart.svg" alt="">
+                        <span class="nb_items" data-count="0">0</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="veil"></div>
+    <section id="minicart-wrapper">
+        <i class="close">&times;</i>
+        <div class="minicart-items">
+        </div>
+        <footer class="cart-footer">
+            <a href="shoppingcart.html" class="primary-btn continue-btn">Continue to cart</a>
+        </footer>
+    </section>
+    <section id="product">
+        <img src="" alt="Product Image">
+        <div class="product__info">
+            <h1 class="login__title--primary"></h1>
+            <p class="label"></p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur eos voluptatum
+                minima itaque nemo,
+                praesentium officia explicabo vel asperiores cumque in deleniti minus, molestiae et est ex natus numquam
+                tempora. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos reiciendis veritatis rem,
+                tempora eos illo officiis quo placeat quam fugiat.</p>
+
+            <form>
+                <p class="label price"></p>
+                <label for="quantity" class="label" style="font-weight:700;">Quantity</label>
+                <input type="number" min="1" value="1" required>
+                <button class="primary-btn">add to cart</button>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="assets/js/mini-cart.js"></script>
+    <script type="module" src="assets/js/product.js"></script>
+    <script type="module" src="assets/js/logged.js"></script>
+</body>
+
+</html>
